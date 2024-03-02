@@ -19,8 +19,7 @@ Separate Random Forest classifiers are trained for each target category, learnin
       Each Random Forest model is trained on the respective features and target labels (Cuisine, Dietary Preference, etc.)
 + ## Prediction Function:
       A function takes a new food item description, generates TF-IDF features, and predicts categories using the trained models.
-+ ## Graph for accuracy and precision
-        ![
+  
 # Challenges Faced:
 + ## Data Size and Quality: 
 Limited data or imbalanced categories could affect model performance.
