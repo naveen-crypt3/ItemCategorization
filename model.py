@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load the data
+
 data = pd.read_excel("FoodList1.xlsx")
 food_description = data["Food"]
 vectorizer = TfidfVectorizer()
@@ -19,7 +19,6 @@ target_meal_course = data["Meal Course"]
 target_prepare = data["Preparation Method"]
 target_main = data["Main Ingredient"]
 
-# Train models
 X_train, X_test, y_train_cuisine, y_test_cuisine = train_test_split(features_vectorized, target_cuisine, test_size=0.2, random_state=42)
 X_train, X_test, y_train_dietary, y_test_dietary = train_test_split(features_vectorized, target_dietary, test_size=0.2, random_state=42)
 X_train, X_test, y_train_meal_course, y_test_meal_course = train_test_split(features_vectorized, target_meal_course, test_size=0.2, random_state=42)
@@ -120,17 +119,15 @@ def show_bar_chart():
     plt.tight_layout()
     plt.show()
 
-# Set up the UI
+
 root = tk.Tk()
 root.title("Food Prediction App")
 
-# Input section
 food_label = tk.Label(root, text="Enter Food Item:")
 food_label.grid(row=0, column=0, padx=10, pady=10)
 food_entry = tk.Entry(root)
 food_entry.grid(row=0, column=1, padx=10, pady=10)
 
-# Buttons
 predict_button = tk.Button(root, text="Predict", command=show_prediction)
 predict_button.grid(row=0, column=2, padx=10, pady=10)
 
@@ -140,7 +137,6 @@ metrics_button.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 chart_button = tk.Button(root, text="Show Bar Chart", command=show_bar_chart)
 chart_button.grid(row=1, column=2, padx=10, pady=10)
 
-# Results and metrics display
 result_label = tk.Label(root, text="", justify="left")
 result_label.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
 
